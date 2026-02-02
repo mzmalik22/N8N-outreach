@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Outreach Pro: AI Podcast Agent",
+  "description": "An AI-powered research and copywriting agent that generates personalized, high-conversion podcast outreach emails for course creators.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
