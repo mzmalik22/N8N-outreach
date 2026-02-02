@@ -26,7 +26,13 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("Missing VITE_GEMINI_API_KEY");
+  }
+
+  this.ai = new GoogleGenAI({ apiKey });
   }
 
   async performResearch(prospect: Partial<Prospect>): Promise<ResearchResult> {
